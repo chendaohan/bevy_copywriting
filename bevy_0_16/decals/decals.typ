@@ -58,7 +58,7 @@ Bevy 前向贴花（更准确地说，是接触投影贴花）的实现灵感来
 
 可以通过 Transform 中的缩放调整贴花大小和投影距离。
 
-注意，集群贴花的 API 文档中向 +Z 方向投射的说法是错误的，实测是 -Z 方向，在 Bevy 中 -Z 是正面，+Z 是背面。我已经为这个文档错误提交了 Issue （https://github.com/bevyengine/bevy/issues/19612）。
+注意，集群贴花的 API 文档中向 +Z 方向投射的说法是错误的，实测是 -Z 方向，在 Bevy 中 -Z 是正面，+Z 是背面。我已经为这个文档错误提交了修复的 PR（https://github.com/bevyengine/bevy/pull/19630）。这个 PR 只修复了 main 分支的文档，在 0.16 的 API 文档和发行文档中还是错误的。
 
 要创建一个集群贴花，可以生成一个 ClusteredDecal 实体。
 
@@ -73,4 +73,4 @@ Bevy 前向贴花（更准确地说，是接触投影贴花）的实现灵感来
 
 需要注意的是，目前只要在贴花的影响范围之内，就会受到影响，无法使处于影响范围之内的物体不受影响。也就是说，如果你用现在的 Bevy 贴花制作弹孔、涂鸦、水坑，玩家进入它们的影响范围，这些贴花也会投影到玩家身上，无法将玩家从影响中排除。
 
-当然也不是绝对的，通过编写片元着色器，可以实现此功能，但很麻烦。我已经提了一个请求此类功能的 Issue （https://github.com/bevyengine/bevy/issues/19607）。
+我已经提了一个请求此类功能的 Issue （https://github.com/bevyengine/bevy/issues/19607）。
